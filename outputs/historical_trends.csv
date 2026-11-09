@@ -1,0 +1,264 @@
+district,disease,year,week,outbreak_reports
+Ariyalur,Acute Diarrheal Disease,2022,12,1
+Ariyalur,Acute Diarrheal Disease,2022,17,1
+Ariyalur,Acute Diarrheal Disease,2023,31,1
+Ariyalur,Acute Diarrheal Disease,2023,34,1
+Ariyalur,Acute Diarrheal Disease,2024,49,1
+Ariyalur,Acute Diarrheal Disease,2025,8,1
+Ariyalur,Mumps,2023,31,1
+Ariyalur,Mumps,2023,33,1
+Chengalpattu,Acute Diarrheal Disease,2024,49,1
+Chennai,Acute Diarrheal Disease,2024,37,1
+Chennai,Acute Diarrheal Disease,2024,38,1
+Coimbatore,Acute Diarrheal Disease,2023,25,1
+Coimbatore,Acute Diarrheal Disease,2023,42,1
+Coimbatore,Acute Diarrheal Disease,2024,22,2
+Coimbatore,Acute Diarrheal Disease,2025,24,1
+Coimbatore,Chickenpox,2023,29,1
+Coimbatore,Chickenpox,2024,8,1
+Coimbatore,Chickenpox,2025,10,1
+Coimbatore,Chickenpox,2025,11,1
+Coimbatore,Chickenpox,2025,13,1
+Coimbatore,Chickenpox,2025,50,1
+Coimbatore,Mumps,2024,8,1
+Coimbatore,Mumps,2024,9,2
+Coimbatore,Mumps,2024,12,1
+Coimbatore,Mumps,2024,30,1
+Coimbatore,Mumps,2024,48,1
+Coimbatore,Mumps,2024,50,1
+Coimbatore,Mumps,2025,5,1
+Coimbatore,Mumps,2025,10,1
+Coimbatore,Mumps,2025,37,1
+Coimbatore,Mumps,2025,45,1
+Cuddalore,Acute Diarrheal Disease,2024,29,1
+Cuddalore,Acute Diarrheal Disease,2025,44,1
+Cuddalore,Acute Diarrheal Disease,2025,45,1
+Dharmapuri,Acute Diarrheal Disease,2021,1,1
+Dharmapuri,Acute Diarrheal Disease,2022,22,1
+Dharmapuri,Acute Diarrheal Disease,2022,23,1
+Dharmapuri,Chickenpox,2025,13,1
+Dharmapuri,Mumps,2024,32,1
+Dindigul,Acute Diarrheal Disease,2022,52,1
+Dindigul,Acute Diarrheal Disease,2024,14,1
+Dindigul,Acute Diarrheal Disease,2025,13,1
+Dindigul,Chickenpox,2025,13,1
+Dindigul,Mumps,2024,32,1
+Dindigul,Mumps,2025,2,1
+Dindigul,Mumps,2025,7,1
+Erode,Acute Diarrheal Disease,2024,23,2
+Erode,Chickenpox,2025,39,1
+Erode,Chickenpox,2025,48,1
+Erode,Chickenpox,2025,49,1
+Erode,Mumps,2024,44,1
+Erode,Mumps,2025,14,1
+Erode,Mumps,2025,15,1
+Kallakurichi,Acute Diarrheal Disease,2021,47,1
+Kallakurichi,Acute Diarrheal Disease,2021,51,1
+Kallakurichi,Acute Diarrheal Disease,2022,15,1
+Kallakurichi,Acute Diarrheal Disease,2022,22,2
+Kallakurichi,Acute Diarrheal Disease,2024,15,1
+Kallakurichi,Acute Diarrheal Disease,2025,3,1
+Kallakurichi,Chickenpox,2022,43,1
+Kallakurichi,Chickenpox,2024,8,1
+Kallakurichi,Chickenpox,2025,8,1
+Kallakurichi,Chickenpox,2025,14,1
+Kallakurichi,Mumps,2024,47,1
+Kanchipuram,Acute Diarrheal Disease,2024,24,1
+Kanchipuram,Acute Diarrheal Disease,2024,43,1
+Kanchipuram,Acute Diarrheal Disease,2025,23,1
+Kanniyakumari,Acute Diarrheal Disease,2024,19,1
+Karur,Acute Diarrheal Disease,2024,9,1
+Krishnagiri,Acute Diarrheal Disease,2024,24,1
+Krishnagiri,Acute Diarrheal Disease,2025,6,1
+Krishnagiri,Acute Diarrheal Disease,2025,8,1
+Krishnagiri,Chickenpox,2025,49,1
+Krishnagiri,Mumps,2024,10,1
+Madurai,Acute Diarrheal Disease,2021,42,1
+Madurai,Acute Diarrheal Disease,2024,37,1
+Madurai,Chickenpox,2022,10,1
+Madurai,Chickenpox,2022,17,1
+Madurai,Mumps,2024,49,1
+Mayiladuthurai,Acute Diarrheal Disease,2024,40,1
+Mayiladuthurai,Acute Diarrheal Disease,2024,51,1
+Mayiladuthurai,Chickenpox,2024,52,1
+Mayiladuthurai,Chickenpox,2025,24,1
+Mayiladuthurai,Mumps,2024,39,2
+Mayiladuthurai,Mumps,2025,10,1
+Mayiladuthurai,Mumps,2025,11,1
+Nagapattinam,Mumps,2024,48,1
+Namakkal,Acute Diarrheal Disease,2023,27,1
+Namakkal,Acute Diarrheal Disease,2023,28,1
+Namakkal,Acute Diarrheal Disease,2023,38,1
+Namakkal,Acute Diarrheal Disease,2025,19,1
+Namakkal,Chickenpox,2022,12,1
+Namakkal,Chickenpox,2023,50,1
+Namakkal,Chickenpox,2024,35,1
+Namakkal,Mumps,2024,11,1
+Namakkal,Mumps,2024,12,2
+Namakkal,Mumps,2024,30,2
+Namakkal,Mumps,2024,42,1
+Namakkal,Mumps,2024,45,2
+Namakkal,Mumps,2024,46,2
+Namakkal,Mumps,2024,49,1
+Namakkal,Mumps,2024,51,1
+Namakkal,Mumps,2025,5,1
+Namakkal,Mumps,2025,9,1
+Perambalur,Acute Diarrheal Disease,2021,9,1
+Perambalur,Acute Diarrheal Disease,2025,20,1
+Perambalur,Chickenpox,2025,51,1
+Perambalur,Mumps,2024,3,1
+Pudukkottai,Acute Diarrheal Disease,2021,8,1
+Pudukkottai,Acute Diarrheal Disease,2022,3,1
+Pudukkottai,Acute Diarrheal Disease,2023,1,1
+Pudukkottai,Acute Diarrheal Disease,2024,40,1
+Pudukkottai,Acute Diarrheal Disease,2025,15,1
+Pudukkottai,Acute Diarrheal Disease,2025,20,1
+Pudukkottai,Chickenpox,2025,8,1
+Pudukkottai,Mumps,2024,13,1
+Pudukkottai,Mumps,2025,10,1
+Pudukkottai,Mumps,2025,39,1
+Ramanathapuram,Mumps,2024,32,1
+Ramanathapuram,Mumps,2025,10,1
+Ranipet,Chickenpox,2022,11,1
+Salem,Acute Diarrheal Disease,2021,47,1
+Salem,Acute Diarrheal Disease,2024,14,1
+Salem,Acute Diarrheal Disease,2024,22,1
+Salem,Acute Diarrheal Disease,2025,27,1
+Salem,Acute Diarrheal Disease,2025,49,1
+Salem,Acute Diarrheal Disease,2025,52,1
+Salem,Chickenpox,2023,9,1
+Salem,Chickenpox,2025,8,1
+Salem,Chickenpox,2025,18,1
+Salem,Chickenpox,2025,27,1
+Salem,Mumps,2024,9,1
+Salem,Mumps,2024,34,1
+Salem,Mumps,2024,45,1
+Salem,Mumps,2025,12,1
+Sivaganga,Acute Diarrheal Disease,2024,11,1
+Sivaganga,Chickenpox,2024,14,1
+Sivaganga,Chickenpox,2025,44,1
+Sivaganga,Mumps,2023,44,1
+Sivaganga,Mumps,2024,32,1
+Sivaganga,Mumps,2025,5,1
+Sivaganga,Mumps,2025,14,1
+Tenkasi,Acute Diarrheal Disease,2025,23,1
+Tenkasi,Acute Diarrheal Disease,2025,24,1
+Tenkasi,Chickenpox,2025,2,1
+Tenkasi,Chickenpox,2025,38,1
+Tenkasi,Mumps,2024,34,1
+Thanjavur,Acute Diarrheal Disease,2022,22,1
+Thanjavur,Acute Diarrheal Disease,2022,45,1
+Thanjavur,Acute Diarrheal Disease,2023,17,1
+Thanjavur,Acute Diarrheal Disease,2024,17,1
+Thanjavur,Acute Diarrheal Disease,2024,28,1
+Thanjavur,Acute Diarrheal Disease,2024,34,1
+Thanjavur,Acute Diarrheal Disease,2025,15,1
+Thanjavur,Chickenpox,2022,18,2
+Thanjavur,Chickenpox,2022,24,1
+Thanjavur,Chickenpox,2024,6,1
+Thanjavur,Chickenpox,2024,12,1
+Thanjavur,Chickenpox,2025,5,1
+Thanjavur,Chickenpox,2025,9,1
+Thanjavur,Chickenpox,2025,10,1
+Thanjavur,Mumps,2023,48,1
+Thanjavur,Mumps,2024,4,1
+Thanjavur,Mumps,2024,6,1
+Thanjavur,Mumps,2024,30,1
+Thanjavur,Mumps,2024,36,1
+The Nilgiris,Chickenpox,2025,29,1
+The Nilgiris,Chickenpox,2025,51,1
+The Nilgiris,Mumps,2024,9,1
+The Nilgiris,Mumps,2024,12,1
+The Nilgiris,Mumps,2024,32,1
+The Nilgiris,Mumps,2024,48,1
+Theni,Chickenpox,2025,12,1
+Theni,Chickenpox,2025,13,1
+Theni,Mumps,2024,17,1
+Theni,Mumps,2024,18,1
+Theni,Mumps,2024,46,1
+Thiruvallur,Acute Diarrheal Disease,2021,49,2
+Thiruvallur,Acute Diarrheal Disease,2024,1,1
+Thiruvallur,Acute Diarrheal Disease,2024,6,1
+Thiruvallur,Acute Diarrheal Disease,2024,34,1
+Thiruvallur,Acute Diarrheal Disease,2024,38,1
+Thiruvallur,Chickenpox,2024,4,1
+Thiruvallur,Chickenpox,2025,8,1
+Thiruvallur,Mumps,2024,11,1
+Thiruvarur,Acute Diarrheal Disease,2024,11,1
+Thiruvarur,Acute Diarrheal Disease,2024,52,1
+Tiruchirappalli,Acute Diarrheal Disease,2022,23,2
+Tiruchirappalli,Acute Diarrheal Disease,2023,16,1
+Tiruchirappalli,Acute Diarrheal Disease,2023,33,1
+Tiruchirappalli,Acute Diarrheal Disease,2023,36,1
+Tiruchirappalli,Acute Diarrheal Disease,2023,41,1
+Tiruchirappalli,Acute Diarrheal Disease,2024,9,2
+Tiruchirappalli,Acute Diarrheal Disease,2024,26,1
+Tiruchirappalli,Acute Diarrheal Disease,2024,28,1
+Tiruchirappalli,Acute Diarrheal Disease,2024,32,1
+Tiruchirappalli,Acute Diarrheal Disease,2025,17,1
+Tiruchirappalli,Chickenpox,2022,13,1
+Tiruchirappalli,Chickenpox,2022,33,1
+Tiruchirappalli,Chickenpox,2024,10,1
+Tiruchirappalli,Mumps,2024,10,1
+Tiruchirappalli,Mumps,2024,12,1
+Tiruchirappalli,Mumps,2024,32,1
+Tiruchirappalli,Mumps,2024,34,1
+Tiruchirappalli,Mumps,2024,35,1
+Tiruchirappalli,Mumps,2024,39,1
+Tiruchirappalli,Mumps,2024,45,1
+Tiruchirappalli,Mumps,2024,50,1
+Tiruchirappalli,Mumps,2025,1,1
+Tiruchirappalli,Mumps,2025,14,1
+Tirunelveli,Acute Diarrheal Disease,2024,26,1
+Tirunelveli,Acute Diarrheal Disease,2025,21,1
+Tirunelveli,Acute Diarrheal Disease,2025,24,1
+Tirunelveli,Mumps,2024,36,1
+Tirupathur,Acute Diarrheal Disease,2024,22,1
+Tirupathur,Chickenpox,2025,11,1
+Tirupathur,Chickenpox,2025,49,1
+Tirupathur,Chickenpox,2025,50,1
+Tirupathur,Mumps,2024,34,1
+Tirupathur,Mumps,2024,49,1
+Tirupathur,Mumps,2024,52,1
+Tirupathur,Mumps,2025,5,1
+Tirupathur,Mumps,2025,50,1
+Tiruppur,Acute Diarrheal Disease,2024,24,1
+Tiruvannamalai,Acute Diarrheal Disease,2024,25,1
+Tiruvannamalai,Acute Diarrheal Disease,2024,26,2
+Tiruvannamalai,Acute Diarrheal Disease,2024,48,1
+Tiruvannamalai,Acute Diarrheal Disease,2025,46,1
+Tiruvannamalai,Chickenpox,2023,9,1
+Tiruvannamalai,Chickenpox,2025,2,1
+Tiruvannamalai,Chickenpox,2025,19,1
+Tiruvannamalai,Chickenpox,2025,47,1
+Tiruvannamalai,Mumps,2024,10,1
+Tuticorin,Mumps,2024,34,1
+Tuticorin,Mumps,2024,48,1
+Tuticorin,Mumps,2025,2,1
+Tuticorin,Mumps,2025,6,1
+Vellore,Acute Diarrheal Disease,2021,42,1
+Vellore,Acute Diarrheal Disease,2021,48,1
+Vellore,Acute Diarrheal Disease,2022,18,1
+Vellore,Acute Diarrheal Disease,2022,19,1
+Vellore,Acute Diarrheal Disease,2025,25,1
+Villupuram,Acute Diarrheal Disease,2022,26,1
+Villupuram,Acute Diarrheal Disease,2023,33,1
+Villupuram,Acute Diarrheal Disease,2023,35,1
+Villupuram,Acute Diarrheal Disease,2024,26,1
+Villupuram,Acute Diarrheal Disease,2024,32,1
+Villupuram,Acute Diarrheal Disease,2024,48,1
+Villupuram,Acute Diarrheal Disease,2024,50,1
+Villupuram,Acute Diarrheal Disease,2025,24,1
+Villupuram,Acute Diarrheal Disease,2025,44,1
+Villupuram,Chickenpox,2024,13,1
+Villupuram,Chickenpox,2025,7,1
+Villupuram,Mumps,2024,30,1
+Villupuram,Mumps,2024,38,1
+Villupuram,Mumps,2024,44,1
+Villupuram,Mumps,2024,47,1
+Villupuram,Mumps,2025,5,1
+Villupuram,Mumps,2025,19,1
+Virudhunagar,Acute Diarrheal Disease,2025,8,1
+Virudhunagar,Mumps,2024,2,1
+Virudhunagar,Mumps,2024,37,1
+Virudhunagar,Mumps,2024,43,1

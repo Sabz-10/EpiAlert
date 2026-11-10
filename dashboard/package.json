@@ -1,0 +1,23 @@
+{
+  "name": "epialert-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:data": "node scripts/prepare-data.cjs",
+    "dev": "npm run sync:data && vite --host 127.0.0.1",
+    "build": "npm run sync:data && vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0",
+    "recharts": "^2.15.3",
+    "papaparse": "^5.5.2"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14"
+  },
+  "engines": {"node": ">=18"}
+}

@@ -32,7 +32,14 @@ const num = n => Number(n) || 0;
 
 function Badge({children, kind=''}) { return <span className={`badge badge-${kind}`}>{children}</span>; }
 function Logo() {
-  return <div className="logo"><div className="logo-shield"><ShieldCheck size={26} strokeWidth={1.85}/><Activity className="logo-pulse" size={17}/></div><b>EpiAlert</b></div>;
+  return (
+    <div className="logo">
+      <div className="logo-shield">
+        <ShieldCheck size={26} strokeWidth={1.85} />
+      </div>
+      <b>EpiAlert</b>
+    </div>
+  );
 }
 function Select({value,onChange,items,label,className=''}) {
   return <label className={`select-box ${className}`}><span className="sr-only">{label}</span><select aria-label={label} value={value} onChange={e=>onChange(e.target.value)}>{items.map(o => <option key={o.value ?? o} value={o.value ?? o}>{o.label ?? o}</option>)}</select><ChevronDown size={15}/></label>;

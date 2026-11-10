@@ -1,6 +1,7 @@
 """Local research inference API. Retrains the exact 2021–2024 model at startup.
 Run: python backend/server.py (after npm run sync:data).
 """
+import os
 import csv
 import json
 import math
@@ -16,6 +17,9 @@ from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "public" / "data" / "ml_training_dataset.csv"
+
+if not SOURCE.exists():
+    SOURCE = ROOT.parent / "outputs" / "ml_training_dataset.csv"
 DISEASE = "Acute Diarrheal Disease"
 NUMERIC = ["previous_4_outbreaks", "previous_8_outbreaks", "week_sin", "week_cos"]
 
@@ -89,6 +93,9 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
 if __name__ == "__main__":
+    PORT = int(os.environ.get("PORT", 8000))
+
     print(f"EpiAlert model ready: {len(TEST)} held-out rows, {len(WEEKS)} weeks")
-    print("Inference API: http://127.0.0.1:8000/api/health")
-    ThreadingHTTPServer(("127.0.0.1", 8000), Handler).serve_forever()
+    print(f"Inference API listening on port {PORT}")
+
+    ThreadingHTTPServer(("0.0.0.0", PORT), Handler).serve_forever()

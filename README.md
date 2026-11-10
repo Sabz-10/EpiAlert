@@ -1,142 +1,139 @@
 # EpiAlert
 
-An experimental Tamil Nadu outbreak-report analytics prototype using historical IDSP data, disease trend exploration, and retrospective district ranking.
+### Exploring disease outbreak patterns across Tamil Nadu
 
-## Project Overview
+EpiAlert is a data science prototype that turns historical disease outbreak reports from Tamil Nadu into structured datasets, trend summaries, and district-level review rankings.
 
-EpiAlert is an experimental outbreak-report analytics prototype focused on Tamil Nadu.
+The project explores a practical question: how can historical public-health reports be organised and analysed to help people investigate where outbreaks have been recorded and how reporting patterns change over time?
 
-The project uses historical outbreak reports published by India's Integrated Disease Surveillance Programme (IDSP) and the National Centre for Disease Control (NCDC), covering 2021–2025.
+> **Important:** EpiAlert is an experimental research prototype. It is not a real-time alert system, a clinical tool, or a replacement for official public-health surveillance.
 
-It aims to:
-- Organize historical outbreak reports into a structured dataset.
-- Explore recorded disease trends across Tamil Nadu districts.
-- Experiment with machine learning to rank districts for review based on historical Acute Diarrheal Disease (ADD) reports.
-- Present historical patterns and model results through a dashboard.
+---
 
-## Dataset
+## What EpiAlert does
 
-EpiAlert uses historical IDSP/NCDC weekly outbreak-report PDFs covering 2021–2025.
+The current prototype brings together three parts:
 
-### Dataset summary
+1. **Data preparation:** Organises historical weekly outbreak reports from India's Integrated Disease Surveillance Programme (IDSP) and the National Centre for Disease Control (NCDC), standardising fields such as district, disease, reporting week, cases, and deaths.
+2. **Disease trend exploration:** Examines historical recorded-outbreak patterns for Acute Diarrheal Disease (ADD), Mumps, and Chickenpox across Tamil Nadu.
+3. **Experimental district ranking:** Uses Logistic Regression to rank districts each week based on historical ADD reporting patterns, selecting five districts for further review.
 
-| Description | Count |
+A supporting weather-data utility is also included. Weather is being explored as a possible source of context, but it is **not used by the currently evaluated machine-learning model**.
+
+## Dataset at a glance
+
+The current dataset is based on IDSP/NCDC weekly outbreak reports covering **2021–2025**.
+
+| Dataset detail | Current count |
 |---|---:|
 | Source PDF reports collected | 258 |
 | Valid report-weeks retained | 257 |
 | Cleaned outbreak records | 516 |
-| Tamil Nadu districts | 38 |
-| Disease categories | 36 |
+| Tamil Nadu districts represented | 38 |
+| Disease categories represented | 36 |
 
-### Data limitations
+Cleaned records retain source details such as the original PDF filename and page number, report year and week, district, disease, and reported cases and deaths where available.
 
-- The dataset contains recorded outbreak events, not complete weekly disease counts for every district.
-- Reported cases and deaths describe the available outbreak records, not necessarily all cases or deaths in a district.
+### Understanding the data
+
+These are records of **reported outbreak events**, not complete disease counts for every district and week.
+
 - A missing report does not mean zero cases or that a district was disease-free.
-- Some source weeks were unavailable or excluded during data cleaning.
+- Reported cases and deaths describe the available outbreak records, not necessarily all cases or deaths in a district.
+- Some source weeks were unavailable or excluded during cleaning.
+- The model learns from the available reports, not from a complete picture of disease incidence.
 
-## Machine Learning Approach
+These limitations are important when interpreting the trends and model results.
 
-The project evaluates an experimental Logistic Regression model for Acute Diarrheal Disease (ADD).
+## Machine-learning approach
 
-### Disease coverage
+The evaluated model focuses on **Acute Diarrheal Disease (ADD)**.
 
-- **Acute Diarrheal Disease (ADD):** Machine-learning ranking and evaluation.
-- **Mumps:** Historical trend exploration only.
-- **Chickenpox:** Historical trend exploration only.
+| Component | Current approach |
+|---|---|
+| Algorithm | Scaled Logistic Regression |
+| Class imbalance | Balanced class weights |
+| Regularisation | C = 0.1 |
+| Training and validation | 2021–2024 |
+| Held-out evaluation | 2025 |
+| Weekly review capacity | Top 5 ranked districts |
+| Features | District, cyclical week features, and previous 4- and 8-week outbreak-report history |
 
-### Model details
+The model produces a relative score for each district-week and ranks districts within each week. The five highest-ranked districts are selected for review.
 
-- Algorithm: Scaled Original Logistic Regression.
-- Class weighting: Balanced.
-- Regularization parameter: C = 0.1.
-- Features include district, cyclical week information, and historical activity over the preceding 4 and 8 weeks.
-- Training and model selection: 2021–2024.
-- Retrospective evaluation: Held-out 2025 data.
-- Review budget: Top 5 ranked districts per week.
+**The scores are not calibrated probabilities.** They do not estimate future patient counts and are not validated medical or public-health risk scores.
 
-The model produces relative ranking scores. These scores are not calibrated probabilities, patient case forecasts, or validated medical-risk classifications.
-## Model Evaluation (2025)
-
-The model was evaluated retrospectively on held-out 2025 data.
+### Retrospective evaluation on 2025 data
 
 | Metric | Result |
 |---|---:|
 | Test observations | 1,976 |
 | Recorded positive observations | 27 |
-| True Positives (TP) | 6 |
-| False Positives (FP) | 254 |
-| False Negatives (FN) | 21 |
-| True Negatives (TN) | 1,695 |
+| True positives | 6 |
+| False positives | 254 |
+| False negatives | 21 |
+| True negatives | 1,695 |
 | Precision | 2.31% |
 | Recall | 22.22% |
-| F1 Score | 4.18% |
+| F1 score | 4.18% |
 | Average Precision | 2.28% |
 
 The model selected five districts per week, producing 260 review selections across 52 weeks.
 
-### Interpreting the results
+### What the results mean
 
-The evaluation shows that the model has limited predictive usefulness:
+The current evaluation shows **limited predictive usefulness** on the held-out 2025 reports. The model identified 6 of the 27 recorded positive observations, while many selected district-weeks did not have a corresponding outbreak record.
 
-- Precision of 2.31% means only a small proportion of selected district-weeks had a recorded outbreak.
-- Recall of 22.22% means the model identified 6 of the 27 recorded positive observations.
-- The results demonstrate the difficulty of ranking rare events using incomplete historical outbreak reports.
+This is an important finding, not something to hide. Rare events and incomplete reporting make the task difficult. The current model is an experimental baseline that needs better data and further validation before it could support operational use.
 
-These results are experimental and should not be interpreted as evidence of a validated early-warning system.
+## Disease coverage
 
-## Limitations
+- **Acute Diarrheal Disease:** machine-learning ranking and retrospective evaluation.
+- **Mumps:** historical trend exploration only.
+- **Chickenpox:** historical trend exploration only.
 
-- The system is a retrospective experimental prototype, not a real-time early-warning system.
-- The model ranks districts using historical ADD outbreak-report patterns; it does not forecast patient case counts.
-- Model scores are relative ranking scores, not calibrated probabilities.
-- The dataset contains incomplete outbreak reporting. Missing records cannot be interpreted as zero cases or disease absence.
-- The model's 2025 evaluation shows low precision and recall.
-- Mumps and Chickenpox are included for historical trend exploration only.
-- Weather data is not used by the evaluated machine-learning model.
-- The system is not intended for clinical diagnosis or public-health decision-making without further validation.
+Trend outputs count recorded outbreak events; they do not represent total patient cases.
 
-## Generated Outputs
+## Current prototype status
 
-The project generates the following files:
+The repository includes data-processing scripts, the ADD model evaluation pipeline, dashboard-oriented CSV/JSON exports, district coordinate data, and a supporting weather-fetching utility.
+
+- **Data processing and model evaluation:** implemented in the current Python pipeline.
+- **Dashboard data exports:** generated by the pipeline. Frontend/dashboard integration is a separate workstream and remains in progress until verified in the running application.
+- **Weather utility:** code is present to retrieve historical weather observations for Tamil Nadu districts. End-to-end execution and dashboard integration still need verification.
+- **Live alerts:** not implemented. The project does not currently monitor live surveillance feeds or send operational warnings.
+
+## Generated outputs
+
+The analysis pipeline writes files to the outputs directory:
 
 | File | Description |
 |---|---|
-| `outputs/idsp_2021_2025_cleaned.csv` | Cleaned historical outbreak records |
-| `outputs/weekly_ml_panel.csv` | District, disease and week-level ML panel |
-| `outputs/ml_training_dataset.csv` | Prepared candidate training data |
-| `outputs/model_scores_2025.csv` | 2025 ADD district ranking scores and evaluation labels |
-| `outputs/historical_trends.csv` | Recorded outbreak-event trends for ADD, Mumps and Chickenpox |
-| `outputs/metrics.json` | Model evaluation metrics |
+| idsp_2021_2025_cleaned.csv | Standardised historical outbreak records |
+| weekly_ml_panel.csv | District-, disease-, and week-level panel with report-availability status |
+| ml_training_dataset.csv | Candidate observations prepared for retrospective modelling |
+| model_scores_2025.csv | 2025 ADD relative scores, district ranks, top-five selections, and evaluation labels |
+| historical_trends.csv | Recorded outbreak-event trends for ADD, Mumps, and Chickenpox |
+| metrics.json | Model configuration, dataset summary, evaluation metrics, and limitations |
 
-### Important interpretation notes
+When interpreting these files:
 
-- `model_scores_2025.csv` contains relative model scores and retrospective evaluation labels.
-- `historical_trends.csv` counts recorded outbreak events, not patient cases.
-- Missing district-week combinations in the trends file must not be interpreted as zero outbreaks.
-- The `actual_report_recorded` field is for retrospective evaluation, not live prediction.
+- model_score is a relative model score, not a calibrated probability.
+- actual_report_recorded is a retrospective evaluation label, not a live signal.
+- historical_trends.csv counts recorded outbreak reports, not patient cases.
+- Missing district-week combinations must not be interpreted as zero outbreaks.
 
-## Data Sources and Provenance
+## Weather-data utility
 
-The project uses historical weekly outbreak reports published by:
+The script src/fetch_weather.py uses the [Open-Meteo Archive API](https://open-meteo.com/en/docs/historical-weather-api) and the coordinates in geo/districts.csv to request hourly temperature, relative humidity, and precipitation.
 
-- Integrated Disease Surveillance Programme (IDSP), India.
-- National Centre for Disease Control (NCDC), India.
+The current script is configured for **1–7 January 2025** and writes the collected records to data/weather.csv.
 
-The source collection covers 2021–2025 and consists of 258 PDF reports. After validation and cleaning, 257 valid report-weeks were retained.
+This utility is separate from the evaluated machine-learning pipeline. Weather variables are not currently used by the ADD model, and the weather workflow still needs end-to-end verification. The data directory must exist before running the script.
 
-Each cleaned outbreak record preserves source information, including:
-- Source PDF filename.
-- Source page number.
-- Report year and week.
-- District and disease.
-- Reported cases and deaths, where available.
+## Project structure
 
-The raw PDF collection is not included in the Git repository. The processed datasets are available in the `outputs/` directory.
-
-## Project Structure
-
-```text
+~~~text
 EpiAlert/
 ├── geo/
 │   └── districts.csv
@@ -155,32 +152,97 @@ EpiAlert/
 │   ├── model_scores_2025.csv
 │   ├── historical_trends.csv
 │   └── metrics.json
-├── app.py
 ├── requirements.txt
 └── README.md
+~~~
 
-## Reproducibility
+The raw source PDFs and audited extraction file are not included in the Git repository. The preparation scripts expect these inputs to be available locally.
 
-Run commands from the repository root with the project's Python environment activated.
+## Running the analysis
 
-To regenerate the prepared ML datasets, run the retrospective ADD evaluation, and export historical trends:
+Run commands from the repository root in a Python environment with the required packages installed.
 
+### 1. Prepare the cleaned records
+
+Make sure the audited extraction file is available at:
+
+~~~text
+outputs/idsp_2021_2025_audit.csv
+~~~
+
+Then run:
+
+~~~bash
+python src/clean_data.py
+~~~
+
+### 2. Prepare the modelling data, evaluate the model, and export trends
+
+The preparation step checks which weekly source PDFs are available under data/. Make sure the required source files are present before running the pipeline.
+
+~~~bash
 python src/train.py
-The pipeline runs these scripts in order:
+~~~
 
-1. `src/prepare_ml_data.py`
-2. `src/final_test.py`
-3. `src/export_trends.py`
+This runs the following scripts in sequence:
+
+1. src/prepare_ml_data.py
+2. src/final_test.py
+3. src/export_trends.py
+
+The resulting CSV and JSON files are written to outputs/.
+
+### 3. Fetch historical weather data (optional)
+
+Create the data directory and install the dependencies required by the weather utility, then run:
+
+~~~bash
+python src/fetch_weather.py
+~~~
+
+This step is independent of the machine-learning pipeline and does not change the current model results.
 
 ### Dependencies
 
-The `requirements.txt` file is maintained by the dashboard and deployment owner. Installation instructions will be updated after the dependency list is finalized and verified.
+The repository's requirements.txt is currently empty. The scripts use libraries including NumPy, pandas, requests, and scikit-learn. Install the dependencies needed for the scripts you intend to run. The exact dependency list and installation instructions should be finalised and tested as part of project setup.
 
-## Future Scope
+## Data sources and provenance
 
-- Improve data completeness by incorporating more consistent surveillance records.
-- Explore additional features and modelling approaches to improve retrospective ranking performance.
-- Conduct prospective evaluation using appropriately time-stamped surveillance data.
-- Investigate weather and environmental factors as potential future research features.
-- Improve district-level visualization and historical trend exploration.
-- Validate the system with public-health experts before considering operational use.
+The project uses historical weekly outbreak reports published by:
+
+- **Integrated Disease Surveillance Programme (IDSP), India**
+- **National Centre for Disease Control (NCDC), India**
+
+The source collection covers 2021–2025. During cleaning, district and disease names are standardised, duplicate records are handled, and selected records are checked or recovered against source PDF text. Source filenames and page references are retained to support traceability.
+
+The raw PDF collection and audited extraction file are not included in the repository. Processed datasets are maintained under outputs/.
+
+## Limitations and responsible use
+
+EpiAlert is a learning and research prototype. At this stage:
+
+- It analyses historical reports rather than live surveillance data.
+- It ranks districts for retrospective review; it does not forecast patient case counts.
+- Model scores are relative rankings, not calibrated probabilities.
+- Incomplete reporting means that an unrecorded outbreak cannot be treated as proof of no disease.
+- The 2025 evaluation shows low precision and recall.
+- Mumps and Chickenpox are included for trend exploration, not model-based prediction.
+- Weather data is not part of the evaluated model.
+- The system has not been prospectively validated or reviewed for operational public-health use.
+
+**EpiAlert should not be used to make clinical decisions, issue public-health warnings, or replace official surveillance and expert assessment.**
+
+## What we plan to improve
+
+Our next steps are to strengthen the prototype and validate its usefulness:
+
+- Complete and verify dashboard integration.
+- Test the weather utility end to end and evaluate whether weather features add measurable value.
+- Improve data completeness and document report coverage more thoroughly.
+- Explore better approaches for rare events and incomplete surveillance records.
+- Evaluate future models using carefully separated, time-aware data.
+- Seek domain-expert feedback before considering any real-world use.
+
+---
+
+*Built as an experimental data science project focused on historical disease surveillance in Tamil Nadu.*
